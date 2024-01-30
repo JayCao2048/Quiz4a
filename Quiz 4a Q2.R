@@ -10,3 +10,10 @@ lucy <- actual + rnorm(20, mean=0, sd=6)
 height <- data.frame(Friend=1:20, Acutal_Height=actual, 
                      Edward_Meansurement = edward, Hugo_Measurement = hugo, 
                      Lucy_Measurement = lucy)
+
+#Test if there are five variables
+height |> length() == 5
+#Test if Actual_Height variables are numeric
+height$Acutal_Height |> class() == "numeric"
+#Since all height should be positive, test if all actual height are greater than 0.
+height$Acutal_Height |> min() > 0
